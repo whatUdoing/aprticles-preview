@@ -1,0 +1,49 @@
+@import '../../app/variables.scss';
+
+@mixin arrow {
+    content: '';
+
+    position: absolute;
+    right: 0;
+    display: block;
+
+    border: 6px solid black;
+}
+
+.sort {
+    display: inline-block;
+    position: relative;
+    padding-right: $global-spacing;
+
+    &::before {
+        @include arrow;
+
+        bottom: -4px;
+
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+
+    &::after {
+        @include arrow;
+
+        top: -4px;
+
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+
+    &_asc {
+        &::after {
+            border-bottom-color: red;
+        }
+    }
+
+    &_desc {
+        &::before {
+            border-top-color: red;
+        }
+    }
+}
