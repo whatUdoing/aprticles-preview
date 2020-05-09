@@ -1,14 +1,6 @@
-import './style.scss';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = () => {
-    return (
-        <div>
-            <header>Hello word</header>
-        </div>
-    );
-};
+import App from './app/';
 
 ReactDOM.render(<App />, document.getElementById('root'));
