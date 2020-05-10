@@ -1,4 +1,6 @@
-import React, { ReactNode, FC, Component } from 'react';
+import React, { FC } from 'react';
+
+import './styles/main.scss';
 
 type Props = {
     items: Array<{
@@ -6,13 +8,30 @@ type Props = {
         text?: string;
     }>;
     ItemComponent?: FC<any>;
+    itemProps?: Record<string, any>;
+    cssClasses?: {
+        list?: string;
+        item?: string;
+    };
 };
-const List: FC<Props> = ({ items, ItemComponent }) => {
+const List: FC<Props> = ({
+    items,
+    ItemComponent,
+    itemProps = {},
+    cssClasses = {}
+}) => {
     return (
-        <ul>
+        <ul className={`list ${cssClasses.list ?? ''}`}>
             {items.map((item) => (
-                <li key={item.id}>
-                    {ItemComponent ? <ItemComponent item={item} /> : item.text}
+                <li
+                    className={`list__item ${cssClasses.item ?? ''}`}
+                    key={item.id}
+                >
+                    {ItemComponent ? (
+                        <ItemComponent item={item} {...itemProps} />
+                    ) : (
+                        item.text
+                    )}
                 </li>
             ))}
         </ul>
