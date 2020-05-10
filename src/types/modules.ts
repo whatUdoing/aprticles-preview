@@ -1,7 +1,7 @@
 import { ReactNode, LazyExoticComponent } from 'react';
 
 type RouteItem = {
-    component: LazyExoticComponent<() => JSX.Element> | ReactNode;
+    component: LazyExoticComponent<() => JSX.Element>;
     path: string;
 
     exact?: boolean;
