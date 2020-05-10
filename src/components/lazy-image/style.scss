@@ -1,0 +1,17 @@
+@import '../../app/styles/theme.scss';
+
+.lazy-image {
+    &_loading {
+        &::after {
+            content: '';
+            display: block;
+
+            width: 100px;
+            height: 100px;
+
+            border-radius: 10px;
+
+            background-color: $theme-color6;
+        }
+    }
+}
