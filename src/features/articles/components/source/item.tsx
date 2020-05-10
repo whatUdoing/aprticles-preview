@@ -18,7 +18,7 @@ const SourceItem: FC<Props> = ({ item, onChange }) => {
     };
 
     return (
-        <div>
+        <div className="article-sources__item">
             <label>
                 <input
                     type="checkbox"

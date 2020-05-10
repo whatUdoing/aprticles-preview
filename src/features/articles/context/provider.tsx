@@ -9,7 +9,6 @@ import {
 } from './actions';
 import { ArticlesContext, ArticlesState } from './';
 import { sort, convertDateToNumber } from './utils';
-import { SortsModeTypes } from 'src/types/components';
 
 const defaultReducer = (
     state: ArticlesState,
@@ -19,7 +18,7 @@ const defaultReducer = (
         case ADD_ARTICLES: {
             const newArticles = action.payload.articles.map((article) => {
                 article.dateNumber = convertDateToNumber(article.date);
-                console.log('article.dateNumber ', article.dateNumber);
+
                 return {
                     ...article,
                     source: action.payload.source

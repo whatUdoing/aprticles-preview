@@ -1,21 +1,40 @@
 import React, { FC } from 'react';
 import { ArticleItem } from 'src/types/articles';
+import LazyImage from '../../../../components/lazy-image/';
+
+import './styles/main.scss';
+import './styles/responsive.scss';
 
 type Props = {
     item: ArticleItem;
 };
 const ArticleItem: FC<Props> = ({ item }) => {
     return (
-        <article>
-            <header>{item.title}</header>
+        <article className="row article-preview middle-xs">
+            <div className="col-xs article-preview__content">
+                <header className="article-preview__header">
+                    {item.title}
+                </header>
 
-            <time dateTime={item.date}>{item.date}</time>
+                <p className="article-preview__preamble">{item.preamble}</p>
 
-            <figure>
-                <img src={item.image} />
-            </figure>
+                <footer className="article-preview__footer">
+                    <div className="row end-xs">
+                        <div className="col">
+                            <div>
+                                <time dateTime={item.date}>{item.date}</time>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
 
-            <p>{item.preamble}</p>
+            <div className="col">
+                <figure className="article-preview__image">
+                    <LazyImage src={item.image} />
+                    {/* <img src={item.image} /> */}
+                </figure>
+            </div>
         </article>
     );
 };

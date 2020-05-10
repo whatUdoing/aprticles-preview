@@ -5,6 +5,12 @@ import { ArticlesSourceTypes, SourceItem } from 'src/types/articles';
 import Item from './item';
 import { useArticles, getArticles } from '../../context';
 import { REMOVE_ARTICLES } from '../../context/actions';
+import List from '../../../../components/list/';
+import './styles/main.scss';
+
+const cssClasses = {
+    list: 'article-sources__list'
+};
 
 const ArticleSources = () => {
     const [, dispatch] = useArticles();
@@ -24,14 +30,17 @@ const ArticleSources = () => {
     };
 
     return (
-        <div>
-            <ul>
-                {sources.map((source) => (
-                    <li key={source.id}>
-                        <Item item={source} onChange={handleSourceChange} />
-                    </li>
-                ))}
-            </ul>
+        <div className="article-sources">
+            <h4 className="article-sources__header">Data sources</h4>
+
+            <List
+                cssClasses={cssClasses}
+                items={sources}
+                ItemComponent={Item}
+                itemProps={{
+                    onChange: handleSourceChange
+                }}
+            />
         </div>
     );
 };

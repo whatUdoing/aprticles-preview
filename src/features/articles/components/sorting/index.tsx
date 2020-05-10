@@ -2,7 +2,7 @@ import React from 'react';
 
 import Sort from '../../../../components/sort/';
 import { useArticles } from '../../context';
-import { SortsModeTypes, SortsMode } from 'src/types/components';
+import { SortsModeTypes } from 'src/types/components';
 import { SORT, SET_SORT } from '../../context/actions';
 
 const SortArticleByDate = () => {
