@@ -1,0 +1,36 @@
+@import '../../../../app/styles/variables.scss';
+
+.articles-layout {
+    height: 100vh;
+
+    display: grid;
+
+    grid-gap: $global-spacing;
+    grid-template-columns: 250px 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        'header header header'
+        'aside main main';
+
+    &__header {
+        grid-area: header;
+
+        box-shadow: 2px 2px 4px 0 $theme-color9;
+    }
+
+    &__main {
+        grid-area: main;
+
+        max-width: $max-content-width;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__aside {
+        grid-area: aside;
+
+        background-color: $theme-color2;
+
+        box-shadow: 2px 2px 4px 0 $theme-color9;
+    }
+}

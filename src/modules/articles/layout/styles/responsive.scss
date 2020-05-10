@@ -1,0 +1,16 @@
+@import '../../../../app/styles/variables.scss';
+@import '../../../../app/styles/theme.scss';
+
+@media (max-width: $break-point-sm) {
+    .articles-layout {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'aside header'
+            'main main';
+
+        &__header,
+        &__aside {
+            background-color: $theme-color2;
+        }
+    }
+}
