@@ -1,0 +1,22 @@
+@import '../../app/styles/theme.scss';
+@import '../../app/styles/variables.scss';
+
+.box {
+    width: 100%;
+
+    &_shadow {
+        box-shadow: 2px 2px 4px 0 $theme-color9;
+    }
+
+    &_primary {
+        background-color: $theme-color2;
+    }
+
+    &_spacing {
+        padding: $global-spacing;
+    }
+
+    &_spacing-horizontal {
+        padding: 0 $global-spacing 0 $global-spacing;
+    }
+}
