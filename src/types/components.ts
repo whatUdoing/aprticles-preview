@@ -1,4 +1,4 @@
-import { EnumLiteralsOf } from './articles';
+import { EnumLiteralsOf } from './general';
 
 export type SortsModeTypes = EnumLiteralsOf<typeof SortsMode>;
 export const SortsMode = Object.freeze({

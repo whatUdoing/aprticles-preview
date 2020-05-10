@@ -1,3 +1,5 @@
+import { EnumLiteralsOf } from './general';
+
 export interface ArticleItem {
     id: number;
     image: string;
@@ -8,8 +10,6 @@ export interface ArticleItem {
     preamble: string;
     source: SourceItem;
 }
-
-export type EnumLiteralsOf<T extends object> = T[keyof T];
 
 export type ArticlesSourceTypes = EnumLiteralsOf<typeof ArticlesSource>;
 export const ArticlesSource = Object.freeze({
